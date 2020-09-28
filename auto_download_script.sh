@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#son güncelleme = TH = 14:26
+#son güncelleme = TH = 15.00
 
 
 read -p "Object Name or Coordinates : " object_name
