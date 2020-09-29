@@ -2,6 +2,8 @@
 
 #son güncelleme = TH = 14:26
 
+#Yazarlar : Hürkan Mert Duran & Mustafa Turan Sağlam
+
 
 read -p "Object Name or Coordinates : " object_name
 #read -p "Coordinate System : " coordinate_system
