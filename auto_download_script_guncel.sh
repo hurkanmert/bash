@@ -122,7 +122,7 @@ do
 	#dikkat buraya.. serverda düzelt...
 
 	printf "\rSource Name : %20s : The download script is being prepared... \n" $f
-	echo "printf '%-20s %-20s %-20s %-20s %-20s %-20s %-1s\n' Obsid Down_start_date Down_start_time Down_time_second Down_file_size Number_of_file Download_speed_in_per_second>> /next/lmxbs/$new/"$new"_info.txt" >> /next/lmxbs/$new/$new"_download_script.sh"
+	echo "printf '%-20s %-20s %-20s %-20s %-20s %-20s %-1s\n' Obsid Down_start_date Down_start_time Down_time_second Down_file_size_MB Number_of_file Download_speed_in_per_second>> /next/lmxbs/$new/"$new"_info.txt" >> /next/lmxbs/$new/$new"_download_script.sh"
 	echo "" >> /next/lmxbs/$new/$new"_download_script.sh"
 
 	data=$(cat "$f" | wc -l)
@@ -167,7 +167,7 @@ do
 
     			echo 'nof=$(ls /next/lmxbs/'$new'/P'$obsid_first'/'$obsid_full'/ | wc -l)' >> /next/lmxbs/$new/$new"_download_script.sh"
 				echo 'nof_2=$(ls /next/lmxbs/'$new'/P'$obsid_first'/'$obsid_full'/* | wc -l)' >> /next/lmxbs/$new/$new"_download_script.sh"
-    			echo "printf '%-20s %-20s %-20s %-20s %-20s %-20s %-1s (MB/s)\n' $"obsid" $"date" $"runtime" $"size" $"nof"/$"nof_2" $"download_speed" >> /next/lmxbs/$new/"$new"_info.txt" >> /next/lmxbs/$new/$new"_download_script.sh"
+    			echo "printf '%-20s %-20s %-20s %-20s %-20s %-20s %-1s (MB/s)\n' $"obsid" $"date" $"runtime" $"download_mb" $"nof"/$"nof_2" $"download_speed" >> /next/lmxbs/$new/"$new"_info.txt" >> /next/lmxbs/$new/$new"_download_script.sh"
 				echo "" >> /next/lmxbs/$new/$new"_download_script.sh"
 
 
@@ -201,7 +201,7 @@ do
 				echo 'download_speed=$(awk "BEGIN {print ($download_mb)/($runtime)}")' >> /next/lmxbs/$new/$new"_download_script.sh"
     			echo 'nof=$(ls /next/lmxbs/'$new'/P'$obsid_first'/'$obsid_full'/ | wc -l)' >> /next/lmxbs/$new/$new"_download_script.sh"
 				echo 'nof_2=$(ls /next/lmxbs/'$new'/P'$obsid_first'/'$obsid_full'/* | wc -l)' >> /next/lmxbs/$new/$new"_download_script.sh"
-    			echo "printf '%-20s %-20s %-20s %-20s %-20s %-20s %-1s (MB/s)\n' $"obsid" $"date" $"runtime" $"size" $"nof"/$"nof_2" $"download_speed" >> /next/lmxbs/$new/"$new"_info.txt" >> /next/lmxbs/$new/$new"_download_script.sh"
+    			echo "printf '%-20s %-20s %-20s %-20s %-20s %-20s %-1s (MB/s)\n' $"obsid" $"date" $"runtime" $"download_mb" $"nof"/$"nof_2" $"download_speed" >> /next/lmxbs/$new/"$new"_info.txt" >> /next/lmxbs/$new/$new"_download_script.sh"
 				echo "" >> /next/lmxbs/$new/$new"_download_script.sh"
 
 			else
@@ -232,7 +232,7 @@ do
 				echo 'download_speed=$(awk "BEGIN {print ($download_mb)/($runtime)}")' >> /next/lmxbs/$new/$new"_download_script.sh"
     			echo 'nof=$(ls /next/lmxbs/'$new'/P'$obsid_first'/'$obsid_full'/ | wc -l)' >> /next/lmxbs/$new/$new"_download_script.sh"
 				echo 'nof_2=$(ls /next/lmxbs/'$new'/P'$obsid_first'/'$obsid_full'/* | wc -l)' >> /next/lmxbs/$new/$new"_download_script.sh"
-    			echo "printf '%-20s %-20s %-20s %-20s %-20s %-20s %-1s (MB/s)\n' $"obsid" $"date" $"runtime" $"size" $"nof"/$"nof_2" $"download_speed" >> /next/lmxbs/$new/"$new"_info.txt" >> /next/lmxbs/$new/$new"_download_script.sh"
+    			echo "printf '%-20s %-20s %-20s %-20s %-20s %-20s %-1s (MB/s)\n' $"obsid" $"date" $"runtime" $"download_mb" $"nof"/$"nof_2" $"download_speed" >> /next/lmxbs/$new/"$new"_info.txt" >> /next/lmxbs/$new/$new"_download_script.sh"
 				echo "" >> /next/lmxbs/$new/$new"_download_script.sh"
 			else
 			    printf " %-1s/%-4s %-2s: %-10s  %-10s\n" $data $ii Obsid $obsid_full "Does not exists."
